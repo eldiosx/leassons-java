@@ -17,7 +17,7 @@ public class App {
    }
    public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    System.out.println("Introduce el número de discos: ");
+    System.out.println("Introduce los discos: ");
     int n = scan.nextInt();
     moverDisco(n, "A", "B", "C");
     System.out.println("\nSe han realizado " + contador + " movimientos");
