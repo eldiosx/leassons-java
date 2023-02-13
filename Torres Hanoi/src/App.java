@@ -1,13 +1,16 @@
+// El programa permite al usuario ingresar el número de discos que desea usar. Luego, se inicializa el juego llamando a la función inicializarTorres que crea un ArrayList para cada una de las torres y agrega los discos en orden decreciente a la primera torre. La función jugar permite al usuario jugar por turnos
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     private static int numDiscos;
     private static ArrayList<Integer>[] torres;
+    private static int turnos;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduce el número de discos: ");
+        System.out.print("\nIntroduce el numero de discos: ");
         numDiscos = scanner.nextInt();
         inicializarTorres();
         jugar();
@@ -22,11 +25,14 @@ public class App {
         for (int i = numDiscos; i >= 1; i--) {
             torres[0].add(i);
         }
+        turnos = 0;
     }
 
     private static void jugar() {
         Scanner scanner = new Scanner(System.in);
         while (torres[2].size() != numDiscos) {
+            System.out.println("============================");
+            System.out.println("Turnos: " + turnos);
             System.out.println("Torre 1: " + torres[0]);
             System.out.println("Torre 2: " + torres[1]);
             System.out.println("Torre 3: " + torres[2]);
@@ -35,9 +41,10 @@ public class App {
             System.out.print("Hacia torre (1-3): ");
             int destino = scanner.nextInt() - 1;
             moverDisco(origen, destino);
+            turnos++;
         }
-        System.out.println("Felicidades, has ganado en " + (numDiscos - 1) + " movimientos!");
         scanner.close();
+        System.out.println("Felicidades, has ganado en " + turnos + " movimientos!");
     }
 
     private static void moverDisco(int origen, int destino) {
