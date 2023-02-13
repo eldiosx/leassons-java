@@ -1,3 +1,5 @@
+// En este programa, la función moverDisco es una función recursiva que se encarga de simular los movimientos necesarios para resolver el juego de las Torres de Hanoi. En la función main, se pide al usuario que introduzca el número de discos que se quieren utilizar, y luego se llama a la función moverDisco para realizar los movimientos necesarios para resolver el juego. Al final, se muestra en pantalla el número total de movimientos realizados
+
 import java.util.Scanner;
 
 public class App {
