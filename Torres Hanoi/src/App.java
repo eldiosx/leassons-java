@@ -1,71 +1,51 @@
-// En este código, se crean tres ArrayList para representar las tres torres. Cada torre es un ArrayList de enteros, donde cada entero representa un disco con un tamaño determinado. En la función initializeTowers, se inicializan las torres con los discos en la primera torre.
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
-
-    private static ArrayList<Integer>[] towers = new ArrayList[3];
+    private static int numDiscos;
+    private static ArrayList<Integer>[] torres;
 
     public static void main(String[] args) {
-        int numDiscs = 3;
-        initializeTowers(numDiscs);
-        Scanner sc = new Scanner(System.in);
-
-        while (!isGameOver()) {
-            System.out.println("Current state of towers:");
-            printTowers();
-            System.out.println("Enter the source tower (1-3):");
-            int source = sc.nextInt() - 1;
-            System.out.println("Enter the destination tower (1-3):");
-            int dest = sc.nextInt() - 1;
-            moveDisc(source, dest);
-        }
-        sc.close();
-        System.out.println("Congratulations! You won the game in " + numMoves + " moves.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce el número de discos: ");
+        numDiscos = scanner.nextInt();
+        inicializarTorres();
+        jugar();
+        scanner.close();
     }
 
-    private static void initializeTowers(int numDiscs) {
+    private static void inicializarTorres() {
+        torres = new ArrayList[3];
         for (int i = 0; i < 3; i++) {
-            towers[i] = new ArrayList<>();
+            torres[i] = new ArrayList<Integer>();
         }
-
-        for (int i = numDiscs; i > 0; i--) {
-            towers[0].add(i);
+        for (int i = numDiscos; i >= 1; i--) {
+            torres[0].add(i);
         }
     }
 
-    private static boolean isGameOver() {
-        return towers[2].size() == numDiscs;
+    private static void jugar() {
+        Scanner scanner = new Scanner(System.in);
+        while (torres[2].size() != numDiscos) {
+            System.out.println("Torre 1: " + torres[0]);
+            System.out.println("Torre 2: " + torres[1]);
+            System.out.println("Torre 3: " + torres[2]);
+            System.out.print("Mover disco desde (1-3): ");
+            int origen = scanner.nextInt() - 1;
+            System.out.print("Hacia torre (1-3): ");
+            int destino = scanner.nextInt() - 1;
+            moverDisco(origen, destino);
+        }
+        System.out.println("Felicidades, has ganado en " + (numDiscos - 1) + " movimientos!");
+        scanner.close();
     }
 
-    private static void printTowers() {
-        for (int i = numDiscs - 1; i >= 0; i--) {
-            for (int j = 0; j < 3; j++) {
-                if (i < towers[j].size()) {
-                    System.out.print(towers[j].get(i));
-                } else {
-                    System.out.print(" ");
-                }
-                System.out.print("\t");
+    private static void moverDisco(int origen, int destino) {
+        if (!torres[origen].isEmpty()) {
+            int disco = torres[origen].get(torres[origen].size() - 1);
+            if (torres[destino].isEmpty() || torres[destino].get(torres[destino].size() - 1) > disco) {
+                torres[destino].add(torres[origen].remove(torres[origen].size() - 1));
             }
-            System.out.println();
         }
     }
-
-    private static void moveDisc(int source, int dest) {
-        int sourceTop = towers[source].get(towers[source].size() - 1);
-        int destTop = towers[dest].get(towers[dest].size() - 1);
-
-        if (sourceTop > destTop) {
-            System.out.println("Invalid move! You can only move a smaller disc onto a larger disc.");
-            return;
-        }
-
-        towers[dest].add(sourceTop);
-        towers[source].remove(towers[source].size() - 1);
-        numMoves++;
-    }
-
-    private static int numMoves = 0;
 }
