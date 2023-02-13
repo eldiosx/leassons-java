@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // El programa permite al usuario ingresar el número de discos que desea usar. Luego, se inicializa el juego llamando a la función inicializarTorres que crea un ArrayList para cada una de las torres y agrega los discos en orden decreciente a la primera torre. La función jugar permite al usuario jugar por turnos, imprimiendo en pantalla el estado de
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -49,5 +49,4 @@ public class App {
       }
    }
 }
-=======
->>>>>>> 39b0feb0be075f7b0b83e474c5904e69c2fc643c
+
