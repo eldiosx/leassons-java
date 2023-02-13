@@ -21,5 +21,5 @@ public class App {
     int n = scan.nextInt();
     moverDisco(n, "A", "B", "C");
     System.out.println("\nSe han realizado " + contador + " movimientos");
- }
+   }
 }
