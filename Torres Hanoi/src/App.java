@@ -16,7 +16,7 @@ public class App {
         jugar();
         scanner.close();
     }
-
+    @SuppressWarnings("unchecked")
     private static void inicializarTorres() {
         torres = new ArrayList[3];
         for (int i = 0; i < 3; i++) {
@@ -56,3 +56,12 @@ public class App {
         }
     }
 }
+// Uso de constantes: Puedes declarar constantes para los números 3 y 1 que se utilizan varias veces en el código en lugar de escribirlos directamente.
+
+// Refactorización de métodos: El método jugar es bastante largo y puede ser refactorizado en métodos más pequeños y concisos para hacerlo más legible y fácil de mantener.
+
+// Validación de entrada: Actualmente, el programa no valida la entrada del usuario, por lo que si el usuario ingresa un número fuera del rango de 1 a 3, el programa generará un error. Se deben agregar controles para asegurarse de que el usuario ingrese un número válido.
+
+// Eliminación de código redundante: En el método inicializarTorres, se utiliza el mismo código para inicializar cada uno de los tres elementos del arreglo torres. Esto se puede refactorizar en un bucle para evitar la redundancia y hacer que el código sea más eficiente.
+
+// Mejora de la impresión: Puedes mejorar la forma en que se imprimen los estados de las torres para hacerlo más fácil de entender para el usuario.
