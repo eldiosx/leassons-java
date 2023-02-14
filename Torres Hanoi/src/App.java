@@ -12,6 +12,7 @@ public class App extends ArrayList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nIntroduce el numero de discos: ");
+        // Try and Catch para que el usuario no meta una letra y bloquee el programa.
         try {
             numDiscos = scanner.nextInt();
             while (numDiscos < 1) {
@@ -50,8 +51,19 @@ public class App extends ArrayList {
             System.out.println("---Mover disco---");
             System.out.print("Desde torre (A/B/C): ");
             String origen = scanner.next().toUpperCase(); //Se usa el método toUpperCase() para permitir que el usuario ingrese tanto mayúsculas como minúsculas para las letras de la torre.
+            //Validacion de entrada para no meter otra cosa que no sea A B o C.
+            while (!origen.matches("[A-Ca-c]")) {
+                System.out.println("Error: la torre debe ser A, B o C.");
+                System.out.print("Desde torre (A/B/C): ");
+                origen = scanner.next().toUpperCase();
+            }
             System.out.print("Hacia torre (A/B/C): ");
             String destino = scanner.next().toUpperCase();
+            while (!destino.matches("[A-Ca-c]")) {
+                System.out.println("Error: la torre debe ser A, B o C.");
+                System.out.print("Hacia torre (A/B/C): ");
+                destino = scanner.next().toUpperCase();
+            }
             try {
                 moverDisco(origen.charAt(0) - 'A', destino.charAt(0) - 'A');
                 turnos++;
@@ -59,6 +71,7 @@ public class App extends ArrayList {
                 System.out.println("Error: la torre debe ser A, B o C.");
             }
         }
+        //Fin de la validacion
         scanner.close();
         System.out.println("Felicidades, has ganado en " + turnos + " movimientos!");
     }
@@ -97,8 +110,5 @@ public class App extends ArrayList {
 
 // Mejora de la impresión: Puedes mejorar la forma en que se imprimen los
 // estados de las torres para hacerlo más fácil de entender para el usuario.
-
-// Try and Catch para que el usuario no meta una letra y bloquee el programa.
-// HECHO
 
 // Escribir movimientos en un archivo.txt.
