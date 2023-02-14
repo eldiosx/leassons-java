@@ -45,7 +45,7 @@ public class App extends ArrayList {
         Scanner scanner = new Scanner(System.in);
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter("movimientos.txt");
+            fileWriter = new FileWriter("movimientos.txt"); // Escribir movimientos en un archivo.txt + TRYCATCH.
         } catch (IOException e) {
             System.out.println("Error: no se pudo crear el archivo.");
         }
@@ -124,5 +124,3 @@ public class App extends ArrayList {
 
 // Mejora de la impresión: Puedes mejorar la forma en que se imprimen los
 // estados de las torres para hacerlo más fácil de entender para el usuario.
-
-// Escribir movimientos en un archivo.txt.
