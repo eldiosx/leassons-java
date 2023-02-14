@@ -95,6 +95,7 @@ public class App extends ArrayList {
             System.out.println("Error: las torres deben estar en el rango de 1 a 3.");
             return;
         }
+
         if (!torres[origen].isEmpty()) {
             int disco = torres[origen].get(torres[origen].size() - 1);
             if (torres[destino].isEmpty() || torres[destino].get(torres[destino].size() - 1) > disco) {
