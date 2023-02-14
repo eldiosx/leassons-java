@@ -48,16 +48,15 @@ public class App extends ArrayList {
             System.out.println("Torre B: " + torres[1]);
             System.out.println("Torre C: " + torres[2]);
             System.out.println("---Mover disco---");
-            System.out.print("Desde torre (1-3): ");
+            System.out.print("Desde torre (A/B/C): ");
+            String origen = scanner.next().toUpperCase(); //Se usa el método toUpperCase() para permitir que el usuario ingrese tanto mayúsculas como minúsculas para las letras de la torre.
+            System.out.print("Hacia torre (A/B/C): ");
+            String destino = scanner.next().toUpperCase();
             try {
-                int origen = scanner.nextInt() - 1;
-                System.out.print("Hacia torre (1-3): ");
-                int destino = scanner.nextInt() - 1;
-                moverDisco(origen, destino);
+                moverDisco(origen.charAt(0) - 'A', destino.charAt(0) - 'A');
                 turnos++;
-            } catch (InputMismatchException e) {
-                System.out.println("Error: la torre debe ser un numero entero.");
-                scanner.nextLine();
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: la torre debe ser A, B o C.");
             }
         }
         scanner.close();
