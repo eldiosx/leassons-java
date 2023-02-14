@@ -36,18 +36,19 @@ public class App extends ArrayList {
         for (int i = numDiscos; i >= 1; i--) {
             torres[0].add(i);
         }
-        turnos = 0;
+        turnos = 1;
     }
 
     private static void jugar() {
         Scanner scanner = new Scanner(System.in);
         while (torres[2].size() != numDiscos) {
             System.out.println("============================");
-            System.out.println("Turnos: " + turnos);
+            System.out.println("---Turno " + turnos + "---");
             System.out.println("Torre A: " + torres[0]);
             System.out.println("Torre B: " + torres[1]);
             System.out.println("Torre C: " + torres[2]);
-            System.out.print("Mover disco desde torre (1-3): ");
+            System.out.println("---Mover disco---");
+            System.out.print("Desde torre (1-3): ");
             try {
                 int origen = scanner.nextInt() - 1;
                 System.out.print("Hacia torre (1-3): ");
