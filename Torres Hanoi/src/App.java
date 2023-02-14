@@ -38,7 +38,7 @@ public class App extends ArrayList {
         for (int i = numDiscos; i >= 1; i--) {
             torres[0].add(i);
         }
-        turnos = 1;
+        turnos = 0;
     }
 
     private static void jugar() {
