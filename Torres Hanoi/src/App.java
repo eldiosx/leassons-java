@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class App extends ArrayList{
+public class App extends ArrayList {
     private static int numDiscos;
     private static ArrayList<Integer>[] torres;
     private static int turnos;
@@ -44,10 +44,10 @@ public class App extends ArrayList{
         while (torres[2].size() != numDiscos) {
             System.out.println("============================");
             System.out.println("Turnos: " + turnos);
-            System.out.println("Torre 1: " + torres[0]);
-            System.out.println("Torre 2: " + torres[1]);
-            System.out.println("Torre 3: " + torres[2]);
-            System.out.print("Mover disco desde (1-3): ");
+            System.out.println("Torre A: " + torres[0]);
+            System.out.println("Torre B: " + torres[1]);
+            System.out.println("Torre C: " + torres[2]);
+            System.out.print("Mover disco desde torre (1-3): ");
             try {
                 int origen = scanner.nextInt() - 1;
                 System.out.print("Hacia torre (1-3): ");
@@ -98,4 +98,7 @@ public class App extends ArrayList{
 // Mejora de la impresión: Puedes mejorar la forma en que se imprimen los
 // estados de las torres para hacerlo más fácil de entender para el usuario.
 
-// Try and Catch para que el usuario no meta una letra y bloquee el programa. HECHO
+// Try and Catch para que el usuario no meta una letra y bloquee el programa.
+// HECHO
+
+// Escribir movimientos en un archivo.txt.
