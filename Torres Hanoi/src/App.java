@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class App {
+public class App extends ArrayList{
     private static int numDiscos;
     private static ArrayList<Integer>[] torres;
     private static int turnos;
