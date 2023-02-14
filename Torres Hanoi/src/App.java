@@ -3,6 +3,7 @@
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 public class App extends ArrayList {
     private static int numDiscos;
@@ -42,6 +43,12 @@ public class App extends ArrayList {
 
     private static void jugar() {
         Scanner scanner = new Scanner(System.in);
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter("movimientos.txt");
+        } catch (IOException e) {
+            System.out.println("Error: no se pudo crear el archivo.");
+        }
         while (torres[2].size() != numDiscos) {
             System.out.println("============================");
             System.out.println("---Turno " + turnos + "---");
@@ -50,8 +57,7 @@ public class App extends ArrayList {
             System.out.println("Torre C: " + torres[2]);
             System.out.println("---Mover disco---");
             System.out.print("Desde torre (A/B/C): ");
-            String origen = scanner.next().toUpperCase(); //Se usa el método toUpperCase() para permitir que el usuario ingrese tanto mayúsculas como minúsculas para las letras de la torre.
-            //Validacion de entrada para no meter otra cosa que no sea A B o C.
+            String origen = scanner.next().toUpperCase();
             while (!origen.matches("[A-Ca-c]")) {
                 System.out.println("Error: la torre debe ser A, B o C.");
                 System.out.print("Desde torre (A/B/C): ");
@@ -65,18 +71,26 @@ public class App extends ArrayList {
                 destino = scanner.next().toUpperCase();
             }
             try {
-                moverDisco(origen.charAt(0) - 'A', destino.charAt(0) - 'A');
+                mueve(origen.charAt(0) - 'A', destino.charAt(0) - 'A');
                 turnos++;
+                fileWriter.write(
+                        "Turno " + turnos + ": Mover disco de la torre " + origen + " a la torre " + destino + ".\n");
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: la torre debe ser A, B o C.");
+            } catch (IOException e) {
+                System.out.println("Error: no se pudo escribir en el archivo.");
             }
         }
-        //Fin de la validacion
         scanner.close();
+        try {
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("Error: no se pudo cerrar el archivo.");
+        }
         System.out.println("Felicidades, has ganado en " + turnos + " movimientos!");
     }
 
-    private static void moverDisco(int origen, int destino) {
+    private static void mueve(int origen, int destino) {
         if (origen < 0 || origen > 2 || destino < 0 || destino > 2) {
             System.out.println("Error: las torres deben estar en el rango de 1 a 3.");
             return;
