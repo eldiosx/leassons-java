@@ -45,7 +45,7 @@ public class App extends ArrayList {
         Scanner scanner = new Scanner(System.in);
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter("movimientos.txt"); // Escribir movimientos en un archivo.txt + TRYCATCH.
+            fileWriter = new FileWriter("movimientos.txt"); // RECUPERACION Escribir movimientos en un archivo.txt + TRYCATCH.
         } catch (IOException e) {
             System.out.println("Error: no se pudo crear el archivo.");
         }
