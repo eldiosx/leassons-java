@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class App {
+public class old {
    private static int numDiscos;
    private static ArrayList<Integer>[] torres;
    
