@@ -13,7 +13,7 @@ public class App extends ArrayList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nIntroduce el numero de discos: ");
-        // Try and Catch para que el usuario no meta una letra y bloquee el programa.
+        // Validación de entrada Try and Catch para que el usuario no meta una letra y bloquee el programa.
         try {
             numDiscos = scanner.nextInt();
             while (numDiscos < 1) {
@@ -50,6 +50,7 @@ public class App extends ArrayList {
             System.out.println("Error: no se pudo crear el archivo.");
         }
         while (torres[2].size() != numDiscos) {
+            // Mejora de la impresión en la forma en que se imprimen los estados de las torres para hacerlo más fácil de entender para el usuario.
             System.out.println("============================");
             System.out.println("---Turno " + turnos + "---");
             System.out.println("Torre A: " + torres[0]);
@@ -70,6 +71,7 @@ public class App extends ArrayList {
                 System.out.print("Hacia torre (A/B/C): ");
                 destino = scanner.next().toUpperCase();
             }
+            //Validación de entrada ABCabc
             try {
                 mueve(origen.charAt(0) - 'A', destino.charAt(0) - 'A');
                 turnos++;
@@ -113,15 +115,7 @@ public class App extends ArrayList {
 // refactorizado en métodos más pequeños y concisos para hacerlo más legible y
 // fácil de mantener.
 
-// Validación de entrada: Actualmente, el programa no valida la entrada del
-// usuario, por lo que si el usuario ingresa un número fuera del rango de 1 a 3,
-// el programa generará un error. Se deben agregar controles para asegurarse de
-// que el usuario ingrese un número válido. HECHO
-
 // Eliminación de código redundante: En el método inicializarTorres, se utiliza
 // el mismo código para inicializar cada uno de los tres elementos del arreglo
 // torres. Esto se puede refactorizar en un bucle para evitar la redundancia y
 // hacer que el código sea más eficiente.
-
-// Mejora de la impresión: Puedes mejorar la forma en que se imprimen los
-// estados de las torres para hacerlo más fácil de entender para el usuario.
