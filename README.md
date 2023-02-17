@@ -1,2 +1,2 @@
 # Tarea_colecciones
-Proyecto en grupo MEDAC
+Proyecto en grupo MEDAC-1DAM
