@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 
-public class App extends ArrayList {
+public class App /*extends ArrayList*/ {
     private static int numDiscos;
     private static ArrayList<Integer>[] torres;
     private static int turnos;
