@@ -1,21 +1,15 @@
-import java.util.InputMismatchException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class PilaOrdenada {
-   ArrayList<Integer> lista = new ArrayList<>();
-   void meter(int pieza) {
-      if (pieza>lista.get(lista.size()-1)) {
-         return;
-      } else {
-         lista.add(pieza);
+public class PilaOrdenada extends ArrayList{
+   public void meter(int pieza) {
+      if (pieza<get(size()-1)) {
+         add(pieza);
       }
-      
    }
-   int sacar() {
-      return lista.remove(lista.size()-1);
+   public int sacar() {
+      return remove(size()-1);
    }
-   int cima() {
-      return lista.get(lista.size()-1);
+   public int cima() {
+      return get(size()-1);
    }
 }
