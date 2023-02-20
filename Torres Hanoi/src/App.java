@@ -43,7 +43,7 @@ public class App /* extends ArrayList */ {
         turnos = 0;
     }
 
-    // Getters and settles
+    // Getters and setters (Para un futuro que se puedan cambiar valores dede otra clase o interfaz...)
     public static int getNumDiscos() {
         return numDiscos;
     }
@@ -67,7 +67,7 @@ public class App /* extends ArrayList */ {
     public static void setTurnos(int turnos) {
         App.turnos = turnos;
     }
-    // END Getters and settles
+    // END Getters and setters
 
     private static void jugar() {
         Scanner scanner = new Scanner(System.in);
