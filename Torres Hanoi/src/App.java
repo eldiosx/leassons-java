@@ -1,11 +1,11 @@
 
-// El programa permite al usuario ingresar el número de discos que desea usar. Luego, se inicializa el juego llamando a la función inicializarTorres que crea un ArrayList para cada una de las torres y agrega los discos en orden decreciente a la primera torre. La función jugar permite al usuario jugar por turnos
+//Torres de Hanoi 
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 
-public class App /*extends ArrayList*/ {
+public class App /* extends ArrayList */ {
     private static int numDiscos;
     private static ArrayList<Integer>[] torres;
     private static int turnos;
@@ -13,7 +13,8 @@ public class App /*extends ArrayList*/ {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nIntroduce el numero de discos: ");
-        // Validación de entrada Try and Catch para que el usuario no meta una letra y bloquee el programa.
+        // Validación de entrada Try and Catch para que el usuario no meta una letra o
+        // un numero menor a 0 y bloquee el programa.
         try {
             numDiscos = scanner.nextInt();
             while (numDiscos < 1) {
@@ -29,6 +30,7 @@ public class App /*extends ArrayList*/ {
         scanner.close();
     }
 
+    // Aqui uso un arreglo de ArrayList
     @SuppressWarnings("unchecked")
     private static void inicializarTorres() {
         torres = new ArrayList[3];
@@ -41,16 +43,44 @@ public class App /*extends ArrayList*/ {
         turnos = 0;
     }
 
+    // Getters and settles
+    public static int getNumDiscos() {
+        return numDiscos;
+    }
+
+    public static void setNumDiscos(int numDiscos) {
+        App.numDiscos = numDiscos;
+    }
+
+    public static ArrayList<Integer>[] getTorres() {
+        return torres;
+    }
+
+    public static void setTorres(ArrayList<Integer>[] torres) {
+        App.torres = torres;
+    }
+
+    public static int getTurnos() {
+        return turnos;
+    }
+
+    public static void setTurnos(int turnos) {
+        App.turnos = turnos;
+    }
+    // END Getters and settles
+
     private static void jugar() {
         Scanner scanner = new Scanner(System.in);
+        // RECUPERACION Escribir movimientos en un archivo.txt
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter("movimientos.txt"); // RECUPERACION Escribir movimientos en un archivo.txt + TRYCATCH.
+            fileWriter = new FileWriter("movimientos.txt"); // Verificamos poder crear el archivo con un tryCatch
         } catch (IOException e) {
             System.out.println("Error: no se pudo crear el archivo.");
         }
         while (torres[2].size() != numDiscos) {
-            // Mejora de la impresión en la forma en que se imprimen los estados de las torres para hacerlo más fácil de entender para el usuario.
+            // Mejora de la impresión en la forma en que se imprimen los estados de las
+            // torres para hacerlo más fácil de entender para el usuario.
             System.out.println("============================");
             System.out.println("---Turno " + turnos + "---");
             System.out.println("Torre A: " + torres[0]);
@@ -71,12 +101,14 @@ public class App /*extends ArrayList*/ {
                 System.out.print("Hacia torre (A/B/C): ");
                 destino = scanner.next().toUpperCase();
             }
-            //Validación de entrada ABCabc
+            // Validación de entrada ABCabc
             try {
                 mueve(origen.charAt(0) - 'A', destino.charAt(0) - 'A');
                 turnos++;
                 fileWriter.write(
+                        // Formato que se va a imprimir en el archivo previamente creado.
                         "Turno " + turnos + ": Mover disco de la torre " + origen + " a la torre " + destino + ".\n");
+                        // Y se repetira en cada jugada.
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: la torre debe ser A, B o C.");
             } catch (IOException e) {
@@ -97,7 +129,7 @@ public class App /*extends ArrayList*/ {
             System.out.println("Error: las torres deben estar en el rango de 1 a 3.");
             return;
         }
-
+        // Verificar si esta vacia con add/remove/size/empty/get dados en clase.
         if (!torres[origen].isEmpty()) {
             int disco = torres[origen].get(torres[origen].size() - 1);
             if (torres[destino].isEmpty() || torres[destino].get(torres[destino].size() - 1) > disco) {
@@ -107,7 +139,7 @@ public class App /*extends ArrayList*/ {
     }
 }
 
-// AÑADIR
+// AÑADIR EN UN FUTURO
 // Uso de constantes: Puedes declarar constantes para los números 3 y 1 que se
 // utilizan varias veces en el código en lugar de escribirlos directamente.
 
