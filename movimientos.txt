@@ -1,3 +1,0 @@
-Turno 1: Mover disco de la torre A a la torre B.
-Turno 2: Mover disco de la torre A a la torre C.
-Turno 3: Mover disco de la torre B a la torre C.
