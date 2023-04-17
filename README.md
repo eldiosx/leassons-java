@@ -1,4 +1,4 @@
-<h1 align="center">Tarea_colecciones</h1>
+<h1 align="center">Tower of Hanoi</h1>
 
 <div align="center">
 
@@ -6,8 +6,8 @@
 
 </div>
 
-## Proyecto en grupo MEDAC-1DAM
+## 1DAM group project
 
-Ejercicio01 - Pablo Caballos Rufo
+Exercise01 - Pablo Caballos Rufo
 
-Ejercicio02 - Daniel Delgado Jiménez
+Exercise02 - Daniel Delgado Jiménez
