@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class PilaOrdenada extends ArrayList<Integer> {
+public class PilasHanoi extends ArrayList<Integer> {
    public void meter(int pieza) {
       if (pieza<get(size()-1)) {
          add(pieza);
