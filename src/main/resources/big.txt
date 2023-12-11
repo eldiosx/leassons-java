@@ -1,0 +1,9 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus suscipit, posuere turpis et, lobortis velit. Donec sit amet pellentesque augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent mattis purus eget ante condimentum, ac posuere mauris convallis. Quisque et mauris libero. Nam vulputate, enim nec convallis semper, ante ante varius neque, vel gravida purus est pulvinar quam.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum laoreet orci ut justo maximus luctus. Donec in justo ac nibh rutrum luctus a eget ante. Ut mi quam, lacinia ac imperdiet vel, venenatis sed diam. Aliquam erat volutpat. Nunc ut tristique nibh, nec ultricies velit. Sed bibendum, quam sed sagittis viverra, mi purus posuere sapien, quis malesuada nunc velit id velit. Mauris congue tortor vitae est porttitor, non pharetra urna congue.
+
+Fusce porttitor libero nibh, sed faucibus arcu consectetur eget. Sed vel sodales est. Aliquam congue interdum diam. Nunc eu feugiat sapien, et dictum eros. Sed ac augue sit amet elit scelerisque lacinia eu vel nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis sagittis sagittis eleifend.
+
+Aliquam sed odio vitae tellus bibendum dignissim. Sed fringilla libero dolor, ut gravida dui volutpat quis. Pellentesque in nisl aliquet, pharetra mauris quis, mollis turpis. Integer rutrum porta felis, quis suscipit turpis tempor sit amet. Aliquam erat volutpat. Nunc laoreet ipsum in venenatis venenatis. Aenean tempus tellus at turpis commodo fringilla.
+
+I hope these text files help you to try the exercises. Let me know if you need me to modify or expand anything.
