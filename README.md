@@ -14,4 +14,5 @@
 #### General
 #### Archives
 #### Pipes
+#### Connect 4
 #### Tower of Hanoi
